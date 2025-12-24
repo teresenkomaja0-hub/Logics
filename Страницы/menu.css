@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe Print', cursive;
+}
+
+/* Убираем полосу прокрутки на всей странице */
+html, body {
+    overflow: hidden; /* Полностью отключаем прокрутку */
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: url('UKqv0CGECIQ.jpg') center/cover fixed;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Изменено с center на flex-start */
+    padding: 10px; /* Уменьшил padding */
+}
+
+/* Контейнер с внутренней прокруткой */
+.container {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+    height: 98vh; /* Увеличил высоту */
+    padding: 15px 25px; /* Еще меньше padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    overflow-y: auto; /* Включаем прокрутку внутри контейнера */
+    margin-top: 5px; /* Небольшой отступ сверху */
+    
+    /* Стили для скрытия ползунка прокрутки */
+    scrollbar-width: none; /* Для Firefox */
+    -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+}
+
+/* Скрываем полосу прокрутки в WebKit браузерах (Chrome, Safari, Opera) */
+.container::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.title {
+    font-size: 48px; /* Немного уменьшил размер */
+    font-weight: 700;
+    font-style: italic;
+    color: #f6fbfb;
+    margin-bottom: 8px; /* Еще меньше отступ */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    padding-top: 2px;
+}
+
+.subtitle {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 6px; /* Минимальный отступ */
+    font-weight: 500;
+}
+
+.tasks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px; /* Уменьшил gap */
+    width: 100%;
+    margin-bottom: 15px; /* Уменьшил отступ снизу */
+    margin-top: 5px; /* Небольшой отступ сверху */
+}
+
+.tasks-column {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Уменьшил gap между задачами */
+}
+
+.task-item {
+    padding: 10px 12px; /* Уменьшил padding */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.15rem; /* Немного уменьшил шрифт */
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1.3; /* Уменьшил межстрочный интервал */
+}
+
+.task-item:hover {
+    color: #4e9586;
+    transform: translateX(5px);
+}
+
+@media (max-width: 900px) {
+    .tasks-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .title {
+        font-size: 42px;
+        margin-bottom: 6px;
+    }
+    
+    .subtitle {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 5px; /* Минимальный padding на мобильных */
+        align-items: center; /* Вернул центрирование на мобильных */
+    }
+    
+    .container {
+        height: 99vh; /* Почти на всю высоту */
+        padding: 10px 15px; /* Минимальный padding */
+        margin-top: 0;
+    }
+    
+    .tasks-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 3px;
+    }
+    
+    .title {
+        font-size: 34px;
+        margin-bottom: 5px;
+        padding-top: 0;
+    }
+    
+    .subtitle {
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
+    
+    .task-item {
+        font-size: 1.05rem;
+        padding: 8px 10px;
+        line-height: 1.25;
+    }
+    
+    .tasks-column {
+        gap: 4px; /* Минимальный gap между задачами */
+    }
+}

@@ -1,0 +1,78 @@
+<svg width="512" height="512" viewBox="0 0 512 512"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- Градиентный фон от темно-зеленого к белому -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#006400;stop-opacity:1" /> <!-- Темно-зеленый -->
+      <stop offset="50%" style="stop-color:#32cd32;stop-opacity:1" /> <!-- Салатовый -->
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" /> <!-- Белый -->
+    </linearGradient>
+    
+    <style>
+      /* ПЕРЕДНИЕ линии: ОДИНАКОВЫЕ толщина и цвет */
+      .front-line {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 3.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      
+      /* ЗАДНИЕ линии: водные знаки, прозрачные */
+      .back-line {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.15;
+      }
+    </style>
+  </defs>
+  
+  <!-- Фон с градиентом -->
+  <rect width="512" height="512" fill="url(#bgGradient)" rx="80"/>
+  
+  <!-- ===== ЗАДНИЕ ЛИНИИ (водные знаки, прозрачные) ===== -->
+  <!-- Большие фоновые круги -->
+  <circle class="back-line" cx="256" cy="256" r="180"/>
+  <circle class="back-line" cx="256" cy="256" r="220"/>
+  <circle class="back-line" cx="256" cy="256" r="260"/>
+  
+  <!-- Фоновые диагональные линии -->
+  <line class="back-line" x1="50" y1="50" x2="462" y2="462"/>
+  <line class="back-line" x1="462" y1="50" x2="50" y2="462"/>
+  <line class="back-line" x1="256" y1="50" x2="256" y2="462"/>
+  <line class="back-line" x1="50" y1="256" x2="462" y2="256"/>
+  
+  <!-- ===== ПЕРЕДНИЕ ЛИНИИ (одинаковые, белые) ===== -->
+  <!-- Основной земной шар -->
+  <circle class="front-line" cx="256" cy="256" r="100"/>
+  
+  <!-- Экватор -->
+  <circle class="front-line" cx="256" cy="256" r="100"/>
+  
+  <!-- Меридианы -->
+  <ellipse class="front-line" cx="256" cy="256" rx="30" ry="100"/>
+  <ellipse class="front-line" cx="256" cy="256" rx="60" ry="100"/>
+  <ellipse class="front-line" cx="256" cy="256" rx="90" ry="100"/>
+  
+  <!-- Параллели -->
+  <ellipse class="front-line" cx="256" cy="256" rx="100" ry="30"/>
+  <ellipse class="front-line" cx="256" cy="256" rx="100" ry="60"/>
+  <ellipse class="front-line" cx="256" cy="256" rx="100" ry="90"/>
+  
+  <!-- ===== ТРИ КОЛЬЦА (ТАКИЕ ЖЕ как передние линии) ===== -->
+  <!-- Кольцо 1: горизонтальное -->
+  <ellipse class="front-line" cx="256" cy="256" rx="160" ry="50"/>
+  
+  <!-- Кольцо 2: под углом 60° -->
+  <g transform="translate(256 256) rotate(60)">
+    <ellipse class="front-line" cx="0" cy="0" rx="140" ry="40"/>
+  </g>
+  
+  <!-- Кольцо 3: под углом 120° -->
+  <g transform="translate(256 256) rotate(120)">
+    <ellipse class="front-line" cx="0" cy="0" rx="140" ry="40"/>
+  </g>
+</svg>

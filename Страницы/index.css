@@ -1,0 +1,84 @@
+
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: url('UKqv0CGECIQ.jpg') center/cover fixed;
+            min-height: 100vh;
+            color: white;
+            font-family: 'Segoe Print', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Container Styles */
+        .container {
+            text-align: center;
+            max-width: 1000px;
+            width: 100%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 8px;
+            gap: 20px;
+        }
+
+        /* Typography */
+        .title {
+            font-size: clamp(45px, 7.5vw, 75px); /* Увеличен в 1.5 раза */
+            font-weight: 700;
+            font-style: italic;
+            color: #f6fbfb;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        /* Button Styles */
+        .btn {
+            width: clamp(100px, 25vw, 120px);
+            height: clamp(35px, 6vh, 40px);
+            font-size: clamp(12px, 2.5vw, 14px);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            background-color: rgba(225, 245, 235, 0.163);
+            color: #f0f0f0;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: rgba(228, 247, 236, 0.518);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: clamp(36px, 6vw, 45px);
+            }
+        }
+   
