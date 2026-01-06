@@ -3,13 +3,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe Print', cursive !important; /* Добавил !important */
 }
 
 body {
     background: url('UKqv0CGECIQ.jpg') center/cover fixed;
     min-height: 100vh;
     color: white;
-    font-family: 'Segoe Print', cursive;
+    font-family: 'Segoe Print', cursive !important; /* Добавил !important */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,6 +30,7 @@ body {
     gap: 40px;
     backdrop-filter: blur(3px);
     background-color: rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe Print', cursive !important; /* Добавил */
 }
 
 /* Main Title */
@@ -41,6 +43,7 @@ body {
     text-align: center;
     line-height: 1.1;
     margin-bottom: 10px;
+    font-family: 'Segoe Print', cursive !important; /* Добавил */
 }
 
 /* Credits Section - МЕНЬШИЙ РАЗМЕР ШРИФТА */
@@ -54,6 +57,7 @@ body {
     border-radius: 10px;
     max-width: 400px; /* Уже, чтобы выглядело компактнее */
     width: 100%;
+    font-family: 'Segoe Print', cursive !important; /* Добавил */
 }
 
 .team-name {
@@ -66,6 +70,7 @@ body {
     background-color: rgba(225, 245, 235, 0.15);
     border-radius: 6px;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    font-family: 'Segoe Print', cursive !important; /* Добавил */
 }
 
 /* Button Styles */
@@ -85,6 +90,7 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    font-family: 'Segoe Print', cursive !important; /* Добавил */
 }
 
 .btn:hover {
@@ -98,27 +104,36 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments - СОХРАНЯЕМ ШРИФТ */
 @media (max-width: 768px) {
     .container {
         padding: 30px 20px;
         gap: 30px;
+        font-family: 'Segoe Print', cursive !important; /* Явно указываем */
     }
     
     .main-title {
         font-size: clamp(32px, 6vw, 40px);
+        font-family: 'Segoe Print', cursive !important; /* Явно указываем */
     }
     
     .credits {
         padding: 12px 15px;
         font-size: clamp(13px, 1.8vw, 15px);
         max-width: 350px;
+        font-family: 'Segoe Print', cursive !important; /* Явно указываем */
     }
     
     .team-name {
         font-size: clamp(14px, 2.2vw, 18px);
         padding: 5px 10px;
         margin-top: 4px;
+        font-family: 'Segoe Print', cursive !important; /* Явно указываем */
+    }
+    
+    /* Гарантируем, что все элементы сохранят шрифт */
+    .container * {
+        font-family: 'Segoe Print', cursive !important;
     }
 }
 
@@ -126,16 +141,64 @@ body {
     .container {
         padding: 20px 15px;
         gap: 25px;
+        font-family: 'Segoe Print', cursive !important; /* Явно указываем */
     }
     
     .credits {
         padding: 10px 12px;
         font-size: 13px;
         max-width: 300px;
+        font-family: 'Segoe Print', cursive !important; /* Явно указываем */
     }
     
     .team-name {
         font-size: 15px;
         padding: 4px 8px;
+        font-family: 'Segoe Print', cursive !important; /* Явно указываем */
     }
+    
+    /* Гарантируем, что все элементы сохранят шрифт */
+    .container * {
+        font-family: 'Segoe Print', cursive !important;
+    }
+}
+
+/* ДОПОЛНИТЕЛЬНЫЕ ГАРАНТИЙНЫЕ ПРАВИЛА */
+/* Принудительно устанавливаем Segoe Print для всех элементов */
+*,
+*::before,
+*::after {
+    font-family: 'Segoe Print', cursive !important;
+}
+
+/* Резервный шрифт для случаев, если Segoe Print недоступен */
+@supports not (font-family: 'Segoe Print') {
+    * {
+        font-family: cursive !important;
+    }
+}
+
+/* Явное указание для всех текстовых элементов */
+h1, h2, h3, h4, h5, h6,
+p, span, a, div, li, td, th,
+button, input, textarea, select,
+.btn, .main-title, .credits, .team-name {
+    font-family: 'Segoe Print', cursive !important;
+}
+
+/* Для всех кнопок и интерактивных элементов */
+button, .btn, input, textarea, select {
+    font-family: 'Segoe Print', cursive !important;
+}
+
+/* Для контейнера и его содержимого */
+.container,
+.container * {
+    font-family: 'Segoe Print', cursive !important;
+}
+
+/* Для body и всего его содержимого */
+body,
+body * {
+    font-family: 'Segoe Print', cursive !important;
 }
