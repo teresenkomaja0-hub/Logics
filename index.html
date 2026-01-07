@@ -13,6 +13,38 @@
     <meta property="og:image" content="https://teresenkomaja0-hub.github.io/Logics/globe-icon1.png">
 
 </head>
+<script>
+    // ЯДЕРНЫЙ МЕТОД - принудительно меняем шрифт
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        console.log('💥 Ядерный метод для мобильных');
+        
+        // 1. Подключаем шрифт
+        const link = document.createElement('link');
+        link.href = 'https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap';
+        link.rel = 'stylesheet';
+        document.head.appendChild(link);
+        
+        // 2. Ждем загрузки
+        setTimeout(() => {
+            // 3. Применяем ко ВСЕМ элементам
+            const all = document.querySelectorAll('*');
+            all.forEach(el => {
+                el.style.fontFamily = "'Gochi Hand', cursive !important";
+            });
+            
+            // 4. Гарантия через setInterval
+            let attempts = 0;
+            const forceInterval = setInterval(() => {
+                document.body.style.fontFamily = "'Gochi Hand', cursive !important";
+                attempts++;
+                if (attempts >= 5) clearInterval(forceInterval);
+            }, 500);
+            
+            console.log('💣 Шрифт принудительно применен');
+        }, 1000);
+    }
+</script>
+
 <body>
     <div class="container">
         <h1 class="title">Логические задачи</h1>
