@@ -1,167 +1,200 @@
+/* menu.css - БЕЗ ПОДЛОЖЕК! */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe Print', cursive !important;
+}
 
+html, body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
 
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: url('UKqv0CGECIQ.jpg') center/cover fixed;
-            min-height: 100vh;
-            color: white;
-            font-family: 'Segoe Print', cursive;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+body {
+    background: url('UKqv0CGECIQ.jpg') center/cover fixed;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: default;
+}
 
-        /* Container Styles */
-        .container {
-            text-align: center;
-            max-width: 1000px;
-            width: 100%;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-radius: 8px;
-            gap: 20px;
-        }
+.container {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+    height: 95vh;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 
-        /* Typography */
-        .title {
-            font-size: clamp(45px, 7.5vw, 75px); /* Увеличен в 1.5 раза */
-            font-weight: 700;
-            font-style: italic;
-            color: #f6fbfb;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-            text-align: center;
-        }
+.container::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
 
-        /* Button Styles */
-        .btn {
-            width: clamp(100px, 25vw, 120px);
-            height: clamp(35px, 6vh, 40px);
-            font-size: clamp(12px, 2.5vw, 14px);
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            background-color: rgba(225, 245, 235, 0.163);
-            color: #f0f0f0;
-            font-weight: 500;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-        }
+.title {
+    font-size: clamp(45px, 6vw, 65px);
+    font-weight: 700;
+    font-style: italic;
+    color: #f6fbfb;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.8); /* Усилил тень */
+    margin-bottom: 30px;
+    cursor: default;
+}
 
-        .btn:hover {
-            background-color: rgba(228, 247, 236, 0.518);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
+/* СЕТКА ЗАДАЧ - 3 КОЛОНКИ В РЯД */
+.tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 40px;
+}
 
-        .btn:active {
-            transform: translateY(1px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
+.tasks-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            
+/* ЭЛЕМЕНТЫ ЗАДАЧ - БЕЗ ФОНОВ! */
+.task-item {
+    padding: 12px 0; /* Только вертикальные отступы */
+    color: #fff;
+    font-size: 1.35rem; /* Увеличил шрифт */
+    text-align: center;
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9); /* Усиленная тень */
+    line-height: 1.4;
+    text-decoration: none;
+    display: block;
+    
+    /* ВАЖНО: УБИРАЕМ ВСЕ ФОНЫ И ЭФФЕКТЫ */
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
 
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: url('UKqv0CGECIQ.jpg') center/cover fixed;
-            min-height: 100vh;
-            color: white;
-            font-family: 'Segoe Print', cursive;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+/* Эффекты при наведении - только текст */
+.task-item:hover {
+    color: #e8f4f4;
+    transform: translateY(-3px);
+    text-shadow: 
+        3px 3px 12px rgba(0,0,0,1),
+        0 0 25px rgba(255,255,255,0.5);
+}
 
-        /* Container Styles */
-        .container {
-            text-align: center;
-            max-width: 1000px;
-            width: 100%;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-radius: 8px;
-            gap: 20px;
-        }
+.task-item:active {
+    transform: translateY(0);
+    color: #c9e8e0;
+}
 
-        /* Typography */
-        .title {
-            font-size: clamp(45px, 7.5vw, 75px); /* Увеличен в 1.5 раза */
-            font-weight: 700;
-            font-style: italic;
-            color: #f6fbfb;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-            text-align: center;
-        }
+/* Кнопки - можно оставить легкий фон */
+.btn {
+    width: clamp(100px, 25vw, 120px);
+    height: clamp(35px, 6vh, 40px);
+    font-size: clamp(12px, 2.5vw, 14px);
+    border-radius: 15px;
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    border: none;
+    background-color: rgba(225, 245, 235, 0.163);
+    color: #f0f0f0;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0.2rem 0;
+}
 
-        /* Button Styles */
-        .btn {
-            width: clamp(100px, 25vw, 120px);
-            height: clamp(35px, 6vh, 40px);
-            font-size: clamp(12px, 2.5vw, 14px);
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            background-color: rgba(225, 245, 235, 0.163);
-            color: #f0f0f0;
-            font-weight: 500;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-        }
+.btn:hover {
+    background-color: rgba(228, 247, 236, 0.518);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
-        .btn:hover {
-            background-color: rgba(228, 247, 236, 0.518);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
-        .btn:active {
-            transform: translateY(1px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
+/* АДАПТИВНОСТЬ */
+@media (max-width: 1024px) {
+    .tasks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .task-item {
+        font-size: 1.25rem;
+    }
+}
 
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            
-            .title {
-                font-size: clamp(36px, 6vw, 45px);
-            }
-        }
-   
-            .title {
-                font-size: clamp(36px, 6vw, 45px);
-            }
-        }
-   
+@media (max-width: 768px) {
+    .container {
+        padding: 15px 20px;
+        height: 96vh;
+    }
+    
+    .title {
+        font-size: clamp(38px, 5vw, 50px);
+        margin-bottom: 25px;
+    }
+    
+    .tasks-grid {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 12px 15px;
+        height: 98vh;
+    }
+    
+    .tasks-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .title {
+        font-size: clamp(32px, 4.5vw, 40px);
+        margin-bottom: 20px;
+    }
+    
+    .task-item {
+        font-size: 1.2rem;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: clamp(28px, 4vw, 36px);
+    }
+    
+    .task-item {
+        font-size: 1.1rem;
+    }
+}
