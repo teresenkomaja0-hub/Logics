@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Логические задачи</title>
+    
+    <!-- Подключаем скрипт -->
+    <script src="segoe-force.js"></script>
+    
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="globe-icon9.svg" type="image/svg+xml">
-
     <meta property="og:image" content="https://teresenkomaja0-hub.github.io/Logics/globe-icon1.png">
 
 </head>
@@ -15,5 +18,16 @@
         <h1 class="title">Логические задачи</h1>
         <button class="btn" onclick="location.href='menu.html'">Войти</button>
     </div>
+    
+    <!-- Для ручного управления (опционально) -->
+    <script>
+        // Проверить статус Segoe Print в консоли
+        setTimeout(function() {
+            console.log('Segoe Force доступен:', window.SegoeForce);
+            
+            // Принудительно переприменить если нужно
+            // window.SegoeForce.reload();
+        }, 2000);
+    </script>
 </body>
 </html>
