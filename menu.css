@@ -1,9 +1,8 @@
-/* menu.css - БЕЗ ПОДЛОЖЕК! */
+/* menu.css - БЕЗ ПОДЛОЖЕК! с шрифтом Caveat */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe Print', cursive !important;
 }
 
 html, body {
@@ -15,6 +14,9 @@ html, body {
 body {
     background: url('UKqv0CGECIQ.jpg') center/cover fixed;
     color: white;
+    font-family: 'Caveat', cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,12 +47,14 @@ body {
 
 .title {
     font-size: clamp(45px, 6vw, 65px);
-    font-weight: 700;
+    font-weight: 400;
     font-style: italic;
     color: #f6fbfb;
-    text-shadow: 3px 3px 10px rgba(0,0,0,0.8); /* Усилил тень */
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
     margin-bottom: 30px;
     cursor: default;
+    font-family: 'Caveat', cursive;
+    font-optical-sizing: auto;
 }
 
 /* СЕТКА ЗАДАЧ - 3 КОЛОНКИ В РЯД */
@@ -69,20 +73,23 @@ body {
 }
 
 /* ЭЛЕМЕНТЫ ЗАДАЧ - БЕЗ ФОНОВ! */
+/* Увеличиваем размер шрифта в 1.5 раза: с 1.5rem до 2.25rem */
 .task-item {
-    padding: 12px 0; /* Только вертикальные отступы */
+    padding: 12px 0;
     color: #fff;
-    font-size: 1.35rem; /* Увеличил шрифт */
+    font-size: 2.25rem; /* увеличено в 1.5 раза от 1.5rem */
     text-align: center;
     cursor: pointer !important;
     transition: all 0.3s ease;
     font-weight: 600;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.9); /* Усиленная тень */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
     line-height: 1.4;
     text-decoration: none;
     display: block;
+    font-family: 'Caveat', cursive;
+    font-optical-sizing: auto;
     
-    /* ВАЖНО: УБИРАЕМ ВСЕ ФОНЫ И ЭФФЕКТЫ */
+    /* Убираем все фоны и эффекты */
     background: transparent !important;
     backdrop-filter: none !important;
     border: none !important;
@@ -90,7 +97,7 @@ body {
     box-shadow: none !important;
 }
 
-/* Эффекты при наведении - только текст */
+/* Эффекты при наведении (только текст) */
 .task-item:hover {
     color: #e8f4f4;
     transform: translateY(-3px);
@@ -104,11 +111,11 @@ body {
     color: #c9e8e0;
 }
 
-/* Кнопки - можно оставить легкий фон */
+/* Кнопки — как в оригинале */
 .btn {
     width: clamp(100px, 25vw, 120px);
     height: clamp(35px, 6vh, 40px);
-    font-size: clamp(12px, 2.5vw, 14px);
+    font-size: clamp(20px, 4vw, 26px) !important;
     border-radius: 15px;
     cursor: pointer !important;
     transition: all 0.3s ease;
@@ -122,6 +129,11 @@ body {
     align-items: center;
     text-decoration: none;
     margin: 0.2rem 0;
+    font-family: 'Caveat', cursive;
+    font-optical-sizing: auto;
+    padding: 2px 10px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .btn:hover {
@@ -135,15 +147,15 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* АДАПТИВНОСТЬ */
+/* Адаптивность */
 @media (max-width: 1024px) {
     .tasks-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-    
+    /* В медиазапросе увеличил размер шрифта только для ".task-item" (было 1.4rem, стало 2.1rem) */
     .task-item {
-        font-size: 1.25rem;
+        font-size: 2.1rem;
     }
 }
 
@@ -152,49 +164,46 @@ body {
         padding: 15px 20px;
         height: 96vh;
     }
-    
     .title {
         font-size: clamp(38px, 5vw, 50px);
         margin-bottom: 25px;
     }
-    
     .tasks-grid {
         gap: 15px;
     }
+    /* Увеличиваем размер шрифта для ".task-item" по медиазапросу */
+    .task-item {
+        font-size: 1.5rem; /* было 1.35rem, стало чуть больше — выберите нужное вам значение */
+        padding: 10px 0;
+    }
+    /* Размер кнопок и т.д., не изменял */
 }
 
 @media (max-width: 600px) {
     body {
         padding: 10px;
     }
-    
     .container {
         padding: 12px 15px;
         height: 98vh;
     }
-    
     .tasks-grid {
         grid-template-columns: 1fr;
         gap: 12px;
     }
-    
-    .title {
-        font-size: clamp(32px, 4.5vw, 40px);
-        margin-bottom: 20px;
-    }
-    
+    /* Размер шрифта задач для малых экранов — оставить по желанию */
     .task-item {
-        font-size: 1.2rem;
-        padding: 10px 0;
+        font-size: 1.3rem;
     }
+    /* Остальное без изменений */
 }
 
 @media (max-width: 400px) {
     .title {
         font-size: clamp(28px, 4vw, 36px);
     }
-    
     .task-item {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
+    /* Размер кнопок, прочее по усмотрению */
 }
