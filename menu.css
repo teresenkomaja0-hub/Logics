@@ -25,6 +25,7 @@ body {
 }
 
 .container {
+    margin-top: 65px;
     text-align: center;
     max-width: 1200px;
     width: 100%;
@@ -46,7 +47,7 @@ body {
 }
 
 .title {
-    font-size: clamp(45px, 6vw, 65px);
+    font-size: 55px;
     font-weight: 400;
     font-style: italic;
     color: #f6fbfb;
@@ -77,11 +78,11 @@ body {
 .task-item {
     padding: 12px 0;
     color: #fff;
-    font-size: 2.25rem; /* увеличено в 1.5 раза от 1.5rem */
+    font-size: 38px; /* увеличено в 1.5 раза от 1.5rem */
     text-align: center;
     cursor: pointer !important;
     transition: all 0.3s ease;
-    font-weight: 600;
+    font-weight: 400;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
     line-height: 1.4;
     text-decoration: none;

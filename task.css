@@ -111,6 +111,7 @@ h3 {
     align-items: center;
     width: 100%;
     min-height: 150px; /* или другое фиксированное значение */
+    margin-top: 50px;
     
 }
 
