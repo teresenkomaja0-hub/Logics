@@ -123,8 +123,8 @@ body {
 
 @media (max-width: 768px) {
     .container {
-        padding: 98px;
-        height: 98vh; /* Немного больше высота на мобильных */
+        padding: 98px 45px;
+        height: 98vh; /* или можно заменить на auto */
     }
     .navigation-buttons {
         margin-top: 15px;
