@@ -111,6 +111,7 @@ body {
     align-items: center;
     width: 100%;
     margin-top: 20px;
+    gap: 0.3rem;
     
 }
 
@@ -124,6 +125,7 @@ body {
 
 @media (max-width: 768px) {
     .container {
+        
         padding: 98px 45px;
         height: 98vh; /* или можно заменить на auto */
     }

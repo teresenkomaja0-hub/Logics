@@ -49,11 +49,33 @@ body {
 }
 
 .title {
-    font-size: clamp(30px, 5vw, 50px); /* Возвращаем оригинальный размер */
+    font-size: 75px;
     font-weight: 400;
     font-style: italic;
     color: #f6fbfb;
-    margin-bottom: 30px; /* Возвращаем оригинальный отступ */
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+    margin-bottom: 30px;
+    cursor: default;
+    font-family: 'Caveat', cursive;
+    font-optical-sizing: auto;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #f6fbfb;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+    font-family: 'Caveat', cursive;
+    font-optical-sizing: auto;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 35px; /* стабильный размер */
+    line-height: 1.2; /* для читаемости */
+    margin-bottom: 35px; /* постоянный отступ */
+}
+
+h1 {
+    font-size: 75px; /* или другой размер */
+    /* остальные стили */
 }
 
 /* Кнопка "Войти" - ИСХОДНЫЙ РАЗМЕР КНОПКИ, НО БОЛЬШОЙ ТЕКСТ */
@@ -106,16 +128,20 @@ body {
         height: 98vh;
         justify-content: center;
     }
-    
+
+    h3 {
+        font-size: 30px; /* сделал меньше, чтобы быть меньше h1 */
+    }
+
     .title {
         font-size: clamp(28px, 4.5vw, 45px);
         margin-bottom: 25px;
     }
-    
+
     .btn {
-        width: clamp(95px, 23vw, 115px); /* Исходный размер */
-        height: clamp(32px, 5.5vh, 38px); /* Исходный размер */
-        font-size: clamp(18px, 3.5vw, 24px) !important; /* Большой текст сохранен */
+        width: clamp(95px, 23vw, 115px);
+        height: clamp(32px, 5.5vh, 38px);
+        font-size: clamp(18px, 3.5vw, 24px) !important;
         padding: 1px 8px;
     }
 }
@@ -132,15 +158,19 @@ body {
         justify-content: center;
     }
     
+    h3 {
+        font-size: 24px; /* делаем еще меньше для самых маленьких экранов */
+    }
+
     .title {
         font-size: clamp(24px, 4vw, 38px);
         margin-bottom: 20px;
     }
-    
+
     .btn {
-        width: 100px; /* Исходный размер */
-        height: 35px; /* Исходный размер */
-        font-size: 20px !important; /* Большой текст сохранен */
+        width: 100px;
+        height: 35px;
+        font-size: 20px !important;
         padding: 0 5px;
     }
 }
