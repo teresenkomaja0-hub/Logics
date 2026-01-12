@@ -25,7 +25,7 @@ body {
 /* Контейнер с внутренней прокруткой без ползунка */
 .container {
     text-align: center;
-    max-width: 800px;
+    max-width: 1000px;
     width: 100%;
     height: 95vh; /* Фиксированная высота */
     padding: 60px;
@@ -63,7 +63,7 @@ h3 {
 .content {
     text-align: justify;
     line-height: 1.3;
-    width: 95%; /* изменено !!!!!!!!! было 100*/
+    width: 100%; 
     margin-bottom: 20px; 
     color: #ffffff;
     font-size: clamp(30px, 2.5vw, 30px); 
@@ -125,7 +125,7 @@ h3 {
 
 @media (max-width: 768px) {
     .container {
-        padding: 97px;
+        padding: 95px;
         height: 98vh; /* Немного больше высота на мобильных */
     }
     .navigation-buttons {

@@ -30,7 +30,7 @@ body {
     max-width: 1200px;
     width: 100%;
     height: 95vh;
-    padding: 50px 30px;
+    padding: 65px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,13 +158,13 @@ body {
     }
     /* В медиазапросе увеличил размер шрифта только для ".task-item" (было 1.4rem, стало 2.1rem) */
     .task-item {
-        font-size: 2.1rem;
+        font-size: 3rem;
     }
 }
 
 @media (max-width: 768px) {
     .container {
-        padding: 50px 20px;
+        padding: 65px 20px;
         height: 96vh;
     }
     .title {
@@ -176,7 +176,7 @@ body {
     }
     /* Увеличиваем размер шрифта для ".task-item" по медиазапросу */
     .task-item {
-        font-size: 1.5rem; /* было 1.35rem, стало чуть больше — выберите нужное вам значение */
+        font-size: 2rem; /* было 1.35rem, стало чуть больше — выберите нужное вам значение */
         padding: 10px 0;
     }
     /* Размер кнопок и т.д., не изменял */
@@ -187,7 +187,7 @@ body {
         padding: 10px;
     }
     .container {
-        padding: 50px 15px;
+        padding: 94px 15px;
         height: 98vh;
     }
     .tasks-grid {
@@ -196,7 +196,7 @@ body {
     }
     /* Размер шрифта задач для малых экранов — оставить по желанию */
     .task-item {
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
     /* Остальное без изменений */
 }
@@ -206,7 +206,7 @@ body {
         font-size: clamp(28px, 4vw, 36px);
     }
     .task-item {
-        font-size: 1.2rem;
+        font-size: 2rem;
     }
     /* Размер кнопок, прочее по усмотрению */
 }
