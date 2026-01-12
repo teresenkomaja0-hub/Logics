@@ -125,7 +125,7 @@ h3 {
 
 @media (max-width: 768px) {
     .container {
-        padding: 95px;
+        padding: 98px;
         height: 98vh; /* Немного больше высота на мобильных */
     }
     .navigation-buttons {
