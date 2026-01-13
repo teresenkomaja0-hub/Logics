@@ -68,14 +68,13 @@ h3 {
     font-optical-sizing: auto;
     font-style: italic;
     font-weight: 400;
-    font-size: 35px; /* стабильный размер */
+    font-size: 45px; /* стабильный размер */
     line-height: 1.2; /* для читаемости */
     margin-bottom: 35px; /* постоянный отступ */
 }
 
 h1 {
-    font-size: 75px; /* или другой размер */
-    /* остальные стили */
+    font-size: clamp(50px, 10vw, 75px)
 }
 
 /* Кнопка "Войти" - ИСХОДНЫЙ РАЗМЕР КНОПКИ, НО БОЛЬШОЙ ТЕКСТ */
@@ -129,9 +128,12 @@ h1 {
         justify-content: center;
     }
 
-    h3 {
-        font-size: 30px; /* сделал меньше, чтобы быть меньше h1 */
+    h3 {font-size: clamp(20px, 3vw, 45px)
     }
+
+    h1 {
+    font-size: clamp(50px, 10vw, 75px)
+}
 
     .title {
         font-size: clamp(28px, 4.5vw, 45px);
@@ -146,31 +148,13 @@ h1 {
     }
 }
 
-@media (max-width: 480px) {
-    body {
-        padding: 15px;
-        align-items: center;
-    }
-    
+@media (max-width: 768px) {
     .container {
-        padding: 20px;
-        height: 99vh;
-        justify-content: center;
+        padding: 98px 45px;
+        height: 98vh; /* или можно заменить на auto */
     }
-    
-    h3 {
-        font-size: 24px; /* делаем еще меньше для самых маленьких экранов */
-    }
-
-    .title {
-        font-size: clamp(24px, 4vw, 38px);
-        margin-bottom: 20px;
-    }
-
-    .btn {
-        width: 100px;
-        height: 35px;
-        font-size: 20px !important;
-        padding: 0 5px;
+    .navigation-buttons {
+        margin-top: 15px;
+        gap: 0.3rem; /* Меньший отступ на мобильных */
     }
 }
