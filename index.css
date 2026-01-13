@@ -128,33 +128,31 @@ h1 {
         justify-content: center;
     }
 
-    h3 {font-size: clamp(20px, 3vw, 45px)
+    h3 {
+        font-size: clamp(20px, 3vw, 45px);
     }
 
     h1 {
-    font-size: clamp(50px, 10vw, 75px)
-}
+        font-size: clamp(50px, 10vw, 75px);
+    }
 
     .title {
         font-size: clamp(28px, 4.5vw, 45px);
         margin-bottom: 25px;
     }
 
+    /* Увеличение шрифта на мобильных */
+    .title {
+        font-size: clamp(45px, 5vw, 50px);
+    }
+    h3 {
+        font-size: clamp(25px, 4vw, 45px);
+    }
+    h1 {
+        font-size: clamp(75px, 10vw, 85px);
+    }
     .btn {
-        width: clamp(95px, 23vw, 115px);
-        height: clamp(32px, 5.5vh, 38px);
-        font-size: clamp(18px, 3.5vw, 24px) !important;
+        font-size: clamp(20px, 4vw, 28px);
         padding: 1px 8px;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 98px 45px;
-        height: 98vh; /* или можно заменить на auto */
-    }
-    .navigation-buttons {
-        margin-top: 15px;
-        gap: 0.3rem; /* Меньший отступ на мобильных */
     }
 }
